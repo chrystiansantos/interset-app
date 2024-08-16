@@ -1,14 +1,17 @@
+import '@/src/styles/global.css'
 import {
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold,
   useFonts,
 } from '@expo-google-fonts/roboto'
+import { QueryClientProvider } from '@tanstack/react-query'
 import { Slot } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
 import { StatusBar, View } from 'react-native'
 import 'react-native-reanimated'
+import { queryClient } from '../lib/reaact-query'
 
 SplashScreen.preventAutoHideAsync()
 
@@ -36,7 +39,9 @@ export default function RootLayout() {
         backgroundColor="transparent"
         translucent
       />
-      <Slot />
+      <QueryClientProvider client={queryClient}>
+        <Slot />
+      </QueryClientProvider>
     </View>
   )
 }
