@@ -11,7 +11,7 @@ export function Header() {
         />
         <Text className="text-4xl text-zinc-50">Interset</Text>
       </View>
-      <Text className="text-lg text-zinc-500">
+      <Text className="mt-2 text-center text-base text-zinc-500">
         Seu amigo para gerenciar suas atividades !
       </Text>
     </>
